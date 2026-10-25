@@ -868,7 +868,9 @@
       visual.replaceChildren();
       const errorNote = document.createElement('p');
       errorNote.className = 'rack-visual-hint';
-      errorNote.textContent = 'Data denah belum dapat dimuat. Pastikan backend aplikasi berjalan.';
+      errorNote.textContent = location.hostname.endsWith('github.io')
+        ? 'GitHub Pages tidak menjalankan backend; data rak dan fitur penyimpanan tidak tersedia.'
+        : 'Data denah belum dapat dimuat. Pastikan backend aplikasi berjalan.';
       visual.appendChild(errorNote);
       setStatus(message, true);
     }
