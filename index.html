@@ -851,6 +851,9 @@
       });
       const contentType = response.headers.get('content-type') || '';
       if (!contentType.toLowerCase().includes('application/json')) {
+        if (location.hostname.endsWith('github.io')) {
+          throw new Error('GitHub Pages hanya meng-host frontend statis. Backend Express/SQLite belum di-host, jadi data dan fitur API belum tersedia.');
+        }
         throw new Error(`API ${url} membalas halaman HTML, bukan JSON. Buka aplikasi melalui server backend di http://localhost:3001 (bukan preview file/Live Server), lalu muat ulang.`);
       }
       const result = await response.json();
@@ -1589,7 +1592,7 @@
 
         const rackImage = document.createElement('img');
         rackImage.className = 'rack-reference-image';
-        rackImage.src = '/public/reference/warehouse-rack-user.jpg';
+        rackImage.src = 'public/reference/warehouse-rack-user.jpg';
         rackImage.alt = `Ilustrasi rack gudang ${rack.rack_code}`;
         rackImage.loading = 'lazy';
 
