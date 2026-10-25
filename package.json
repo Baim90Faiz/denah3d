@@ -1,0 +1,11 @@
+{
+  "name": "rack-management-gudang-enzim",
+  "private": true,
+  "workspaces": [
+    "backend"
+  ],
+  "scripts": {
+    "start": "npm --workspace backend start",
+    "build": "node scripts/build-frontend.js"
+  }
+}

@@ -1,0 +1,15 @@
+node_modules/
+.env
+.env.*
+!.env.example
+backend/node_modules/
+backend/.env
+backend/.env.*
+backend/db/*.db
+backend/db/*.sqlite
+backend/db/*.sqlite3
+backend/db/*.legacy-json
+backend/*.log
+backend/output.txt
+skills/
+dist/
